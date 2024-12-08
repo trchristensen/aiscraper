@@ -4,20 +4,24 @@ A flexible web scraping API that uses AI to extract structured data from any web
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository
+2. Install dependencies:
 ```bash
-git clone https://github.com/yourusername/ai-web-scraper.git
-cd ai-web-scraper
+composer install
 ```
 
-2. Configure your OpenAI API key:
-   - Open `api/retrieve/AIScraper.php`
-   - Replace the placeholder API key with your own:
-```php
-$this->openai_key = 'your-openai-api-key';
+3. Set up your environment:
+```bash
+cp .env.example .env
+# Edit .env with your configuration
 ```
 
-3. Set up your web server (Apache/Nginx) to point to the project directory
+4. Configure your OpenAI API key in `.env`:
+```env
+OPENAI_API_KEY=your-openai-api-key-here
+```
+
+5. Set up your web server (Apache/Nginx) to point to the project directory
 
 ## Usage
 

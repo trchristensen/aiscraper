@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 class AIScraper
 {
     private $openai_key;
@@ -7,12 +9,18 @@ class AIScraper
 
     public function __construct()
     {
-        // $this->openai_key = getenv('OPENAI_API_KEY');
-        $this->openai_key = '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';
-        if (empty($this->openai_key)) {
-            throw new Exception("OpenAI API key not configured");
-        }
-        $this->valid_api_keys[] = 'test-key-123';
+        // Load environment variables
+        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+        $dotenv->load();
+
+        // Required environment variables
+        $dotenv->required(['OPENAI_API_KEY'])->notEmpty();
+
+        // Get OpenAI key from environment
+        $this->openai_key = $_ENV['OPENAI_API_KEY'];
+
+        // Get API keys from environment and convert to array
+        $this->valid_api_keys = explode(',', $_ENV['API_KEYS'] ?? 'test-key-123');
     }
 
     public function retrieve($params)
