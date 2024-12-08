@@ -1,0 +1,28 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Cache and logs
+/cache/*
+!/cache/.gitkeep
+*.log
+debug.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+
+# PHP specific
+*.phar
+*.phpunit.result.cache
+
+# Project specific
+/api/retrieve/config.php
