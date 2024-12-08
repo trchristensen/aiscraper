@@ -4,7 +4,12 @@ A flexible web scraping API that uses AI to extract structured data from any web
 
 ## Installation
 
-1. Clone the repository
+1. Clone the repository:
+```bash
+git clone https://github.com/trchristensen/aiscraper.git
+cd aiscraper
+```
+
 2. Install dependencies:
 ```bash
 composer install
